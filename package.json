@@ -2,6 +2,8 @@
   "name": "cli_hasher",
   "version": "1.0.0",
   "description": "",
+  "engines": { "node": ">=8.9.0" },
+  "engineStrict": true,
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,6 +12,7 @@
   "author": "David Martinez Barreiro <davidmartinezbarreiro@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "bcryptjs": "^2.4.3"
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.5"
   }
 }
