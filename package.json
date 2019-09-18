@@ -6,10 +6,16 @@
     "node": ">=8.9.0"
   },
   "engineStrict": true,
+  "bin": {
+    "cli_hash": "bin/cli_hash.mjs"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --experimental-modules app.mjs"
+    "start": "node --experimental-modules app.mjs",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "minor-release": "npm version minor && npm publish",
+    "major-release": "npm version major && npm publish"
   },
   "repository": {
     "type": "url",
