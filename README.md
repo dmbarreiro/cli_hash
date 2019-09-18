@@ -1,6 +1,6 @@
-# CLI Hash Generator
+# CLI Hash
 
-Generates a salted hash from input file using selected number of rounds to generate the hash salt. If another input file containing a hash is provided it will check if the provided hash matches the other input string.
+Generates/compares a salted hash from input file. When generating the hash you can select the number of rounds to generate the hash salt. When comparing instead of the salt rounds introduce the file containing the hash to compare.g.
 
 #### Install
 
