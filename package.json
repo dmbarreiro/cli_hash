@@ -2,12 +2,18 @@
   "name": "cli_hash",
   "version": "1.0.0",
   "description": "",
-  "engines": { "node": ">=8.9.0" },
+  "engines": {
+    "node": ">=8.9.0"
+  },
   "engineStrict": true,
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --experimental-modules app.mjs"
+  },
+  "repository": {
+    "type": "url",
+    "url": "git+https://github.com/dmbarreiro/cli_hash.git"
   },
   "author": "David Martinez Barreiro <davidmartinezbarreiro@gmail.com>",
   "license": "MIT",
