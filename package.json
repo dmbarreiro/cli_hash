@@ -1,6 +1,6 @@
 {
   "name": "cli_hash",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "",
   "engines": {
     "node": ">=8.9.0"
@@ -21,6 +21,14 @@
     "type": "url",
     "url": "git+https://github.com/dmbarreiro/cli_hash.git"
   },
+  "keywords": [
+    "cli",
+    "tool",
+    "hash",
+    "compare",
+    "bcryptjs",
+    "testing"
+  ],
   "author": "David Martinez Barreiro <davidmartinezbarreiro@gmail.com>",
   "license": "MIT",
   "dependencies": {
