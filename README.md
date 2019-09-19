@@ -1,6 +1,8 @@
 # CLI Hash
 
-CLI tool that generates salted hash from input file or compares input file with provided hash. When generating the hash you can select the number of rounds to generate the hash salt. When comparing instead of the salt rounds introduce the file containing the hash.
+CLI tool wrapping [bcryptjs](https://www.npmjs.com/package/bcryptjs) that generates a salted hash from input file or compares input file with provided hash. When generating the hash you can select the number of rounds to generate the hash salt. When comparing instead of the salt rounds introduce the file containing the hash.
+
+Useful for testing if you bcryptjs in your project and for comparing strings and hashes (sensitive data) without sharing them with online tools.
 
 #### Install
 
