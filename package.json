@@ -1,6 +1,6 @@
 {
   "name": "cli_hash",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "",
   "engines": {
     "node": ">=8.9.0"
@@ -13,9 +13,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --experimental-modules app.mjs",
-    "patch-release": "npm version patch && npm publish && git push --follow-tags",
-    "minor-release": "npm version minor && npm publish && git push --follow-tags",
-    "major-release": "npm version major && npm publish && git push --follow-tags"
+    "generate_docs": "jsdoc -c jsdoc.json",
+    "patch_release": "npm version patch && npm publish && git push --follow-tags",
+    "minor_release": "npm version minor && npm publish && git push --follow-tags",
+    "major_release": "npm version major && npm publish && git push --follow-tags"
   },
   "repository": {
     "type": "url",
@@ -35,5 +36,8 @@
     "bcryptjs": "^2.4.3",
     "bluebird": "^3.5.5",
     "yargs": "^14.0.0"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.3"
   }
 }

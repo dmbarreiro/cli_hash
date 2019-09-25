@@ -66,4 +66,14 @@ cli_hash compare -i test/wrong-string-to-hash.txt -c test/hash-to-check.txt
 
 `✘ String and hash do NOT match` will be printed in the console.
 
+#### Build Documentation (JSDoc)
+
+```
+npm run generate_docs
+```
+
+The `html` documentation will be exported to `/docs`.
+
+
+
 CLI Hash Generator uses [bcryptjs](https://www.npmjs.com/package/bcryptjs).
