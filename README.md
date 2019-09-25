@@ -17,7 +17,7 @@ npm install --global cli_hash
 To hash:
 
 ```
-cli_hash generate -i <path-to-file> -s <salt-generation-rounds>
+cli_hash generate -i <path-to-file> [-s <salt-generation-rounds>] [-o <path-to-output-file>]
 ```
 
 To compare:
@@ -43,6 +43,12 @@ cli_hash generate -i test/string-to-hash.txt -s 12
 ```
 
 since `12` is the default value for salt length.
+
+If you want to store the hash in a file instead of printing it to console you can do that specifying the output file with `-o`
+
+```
+cli_hash generate -i test/string-to-hash.txt -o test/output_hash.txt
+```
 
 ##### 2. Compare string to hash
 
