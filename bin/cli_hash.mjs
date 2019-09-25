@@ -11,9 +11,17 @@ const argv = yargs
             default: 12,
             describe: 'Salt length',
             type: 'number'
+        }).option('o', {
+            alias: 'output',
+            describe: 'Output file',
+            type: 'string'
         });
     }, (argv) => {
-        cli_hash_generate(argv.input_file, argv.salt);
+        if (argv.output) {
+            cli_hash_generate(argv.input_file, argv.salt, argv.output);
+        } else {
+            cli_hash_generate(argv.input_file, argv.salt);
+        }
     })
     .command('compare', 'Compares file content with hash contained in file', (yargs) => {
         return yargs.option('c', {

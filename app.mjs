@@ -3,7 +3,7 @@ import bluebird from "bluebird";
 import fsCallback from "fs";
 const fs = bluebird.promisifyAll(fsCallback);
 
-const cli_hash_generate = function(fileStringToHash, saltLength) {
+const cli_hash_generate = function(fileStringToHash, saltLength, outputFile) {
     if (Number.isNaN(saltLength)) {
         console.log(`Salt length must be a number`);
         process.exit(1);
@@ -12,7 +12,16 @@ const cli_hash_generate = function(fileStringToHash, saltLength) {
         .then((stringToHash) => {
             return bcryptjs.hash(stringToHash, saltLength);
         }).then((result) => {
-            console.log(result);
+            if (outputFile) {
+                return fs.writeFileAsync(outputFile, result, { encoding: "utf8" });
+            } else {
+                console.log(result);
+            }
+        }).then(() => {
+            // Then block always reached even when no outputFile is specified
+            if (outputFile) {
+                console.log('Hash successfully stored in', outputFile);
+            }
         }).catch((err) => {
             console.log(`Error: ${err}`);
         });
