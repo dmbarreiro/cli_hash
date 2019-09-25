@@ -1,0 +1,13 @@
+{
+    "source": {
+        "includePattern": ".+\\.(m)?js$",
+        "include": ["."],
+        "exclude": ["node_modules"]
+    },
+    "recurseDepth": 10,
+    "opts": {
+        "destination": "./docs/",
+        "encoding": "utf8",
+        "recurse": true
+    }
+}
