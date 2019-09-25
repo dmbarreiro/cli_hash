@@ -17,13 +17,13 @@ npm install --global cli_hash
 To hash:
 
 ```
-cli_hash generate <path-to-file> <salt-generation-rounds>
+cli_hash generate -i <path-to-file> -s <salt-generation-rounds>
 ```
 
 To compare:
 
 ```
-cli_hash compare <path-to-file> <salt-generation-rounds> <path-to-file-containing-hash>
+cli_hash compare -i <path-to-file> -c <path-to-file-containing-hash>
 ```
 
 #### Examples
@@ -33,15 +33,21 @@ The repository contains test files under `test/` that you can use to check the b
 ##### 1. Generate hash from string
 
 ```
-cli_hash generate test/string-to-hash.txt 12
+cli_hash generate -i test/string-to-hash.txt -s 12
 ```
 
-Hashes string contained in `test/string-to-hash.txt` using `12` rounds to generate the hashing salt. The generated hash will be printed in the console.
+Hashes string contained in `test/string-to-hash.txt` using `12` rounds to generate the hashing salt. The generated hash will be printed in the console. This is equivalent to
+
+```
+cli_hash generate -i test/string-to-hash.txt -s 12
+```
+
+since `12` is the default value for salt length.
 
 ##### 2. Compare string to hash
 
 ```
-cli_hash compare test/string-to-hash.txt test/hash-to-check.txt
+cli_hash compare -i test/string-to-hash.txt -c test/hash-to-check.txt
 ```
 
 Checks string contained in `test/string-to-hash.txt` matches hash contained in `test/hash-to-check.txt`. The hashes should match and `✔ String and hash match` will be printed in the console.
@@ -49,7 +55,7 @@ Checks string contained in `test/string-to-hash.txt` matches hash contained in `
 Check for negative comparison with
 
 ```
-cli_hash compare test/wrong-string-to-hash.txt test/hash-to-check.txt
+cli_hash compare -i test/wrong-string-to-hash.txt -c test/hash-to-check.txt
 ```
 
 `✘ String and hash do NOT match` will be printed in the console.
