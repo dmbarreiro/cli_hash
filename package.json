@@ -1,6 +1,6 @@
 {
   "name": "cli_hash",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "",
   "engines": {
     "node": ">=8.9.0"
@@ -15,7 +15,7 @@
     "start": "node --experimental-modules app.mjs",
     "generate_docs": "jsdoc -c jsdoc.json",
     "eslint": "eslint --fix --ext .mjs .",
-    "patch_release": "npm version patch && npm publish && git push --follow-tags",
+    "patch_release": "npm version --no-git-tag-version version patch && npm publish && git push --follow-tags",
     "minor_release": "npm version minor && npm publish && git push --follow-tags",
     "major_release": "npm version major && npm publish && git push --follow-tags"
   },
