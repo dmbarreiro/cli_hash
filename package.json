@@ -14,6 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --experimental-modules app.mjs",
     "generate_docs": "jsdoc -c jsdoc.json",
+    "eslint": "eslint --fix --ext .mjs .",
     "patch_release": "npm version patch && npm publish && git push --follow-tags",
     "minor_release": "npm version minor && npm publish && git push --follow-tags",
     "major_release": "npm version major && npm publish && git push --follow-tags"
@@ -21,6 +22,12 @@
   "repository": {
     "type": "url",
     "url": "git+https://github.com/dmbarreiro/cli_hash.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint",
+      "pre-push": "npm run eslint"
+    }
   },
   "keywords": [
     "cli",
@@ -38,6 +45,8 @@
     "yargs": "^14.0.0"
   },
   "devDependencies": {
+    "eslint": "^6.4.0",
+    "husky": "^3.0.5",
     "jsdoc": "^3.6.3"
   }
 }

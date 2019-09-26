@@ -5,7 +5,7 @@ const fs = bluebird.promisifyAll(fsCallback);
 
 /**
  * Generates hash from file content and prints or stores result in output file
- * 
+ *
  * @param {string} fileStringToHash File containing string to hash
  * @param {number} saltLength Salt length
  * @param {string} outputFile File used to store hash
@@ -13,7 +13,7 @@ const fs = bluebird.promisifyAll(fsCallback);
  */
 const cli_hash_generate = function(fileStringToHash, saltLength, outputFile) {
     if (Number.isNaN(saltLength)) {
-        console.log(`Salt length must be a number`);
+        console.log("Salt length must be a number");
         process.exit(1);
     }
     fs.readFileAsync(fileStringToHash, "utf8")
@@ -28,16 +28,16 @@ const cli_hash_generate = function(fileStringToHash, saltLength, outputFile) {
         }).then(() => {
             // Then block always reached even when no outputFile is specified
             if (outputFile) {
-                console.log('Hash successfully stored in', outputFile);
+                console.log("Hash successfully stored in", outputFile);
             }
         }).catch((err) => {
             console.log(`Error: ${err}`);
         });
-}
+};
 
 /**
  * Check if content of input file corresponds to hash contained in hash file
- * 
+ *
  * @param fileStringToHash File containing string to hash
  * @param fileHashToCheck File containing hash to compare
  * @returns {undefined}
@@ -59,6 +59,6 @@ const cli_hash_compare = function(fileStringToHash, fileHashToCheck) {
         }).catch((err) => {
             console.log(`Error: ${err}`);
         });
-}
+};
 
 export { cli_hash_generate, cli_hash_compare };
